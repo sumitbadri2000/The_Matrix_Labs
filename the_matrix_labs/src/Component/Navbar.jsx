@@ -21,10 +21,9 @@ import {
   AiFillLinkedin,
   AiFillTwitterSquare,
 } from "react-icons/ai";
+
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -97,7 +96,13 @@ export default function Simple() {
                   </Flex>
                 </Box>
                 <Box>
-                  <Flex justifyContent={"center"}>
+                  <Flex
+                    justifyContent={"center"}
+                    visibility={{
+                      base: "visible",
+                      xl: "visible",
+                      md: "hidden",
+                    }}>
                     <AiFillFacebook fontSize="30px" color="red" />
                     <AiFillLinkedin fontSize="30px" color="red" />
                     <AiFillTwitterSquare fontSize="30px" color="red" />
@@ -133,18 +138,22 @@ export default function Simple() {
                 height="200px"
                 marginTop={"10px"}>
                 <Box fontSize={"20px"} color="white">
-                  <Flex marginTop={"20px"} gap="20px"
-                     alignItems={"center"}
-                     _hover={{ bgColor: "red" }} 
-                     padding="5px"
-                     >
+                  <Flex
+                    marginTop={"20px"}
+                    gap="20px"
+                    alignItems={"center"}
+                    _hover={{ bgColor: "red" }}
+                    padding="5px">
                     <MdToken fontSize="25px" color="white" />
 
                     <a href="/token">Token Address</a>
                   </Flex>
-                  <Flex marginTop={"20px"} gap="20px" alignItems={"center"}
-                     _hover={{ bgColor: "red" }}
-                     padding="5px">
+                  <Flex
+                    marginTop={"20px"}
+                    gap="20px"
+                    alignItems={"center"}
+                    _hover={{ bgColor: "red" }}
+                    padding="5px">
                     <AiOutlineBlock fontSize="25px" color="white" />
 
                     <a href="/pair">Pair Address</a>

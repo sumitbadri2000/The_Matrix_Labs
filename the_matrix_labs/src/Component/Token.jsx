@@ -35,11 +35,9 @@ export default function Token() {
   };
   return (
     <>
-
       <Flex
         direction={{ base: "column", md: "row", sm: "column" }}
         backgroundColor="brown">
-          {/* <Image src="https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?cs=srgb&dl=pexels-hristo-fidanov-1252890.jpg&fm=jpg" width={"100%"} /> */}
         <WithSubnavigation w="10%" />
         <Flex
           direction="column"
@@ -63,39 +61,35 @@ export default function Token() {
             </InputRightElement>
           </InputGroup>
           <Box padding={"15px"} width="100%">
-          <Heading
-                      color={"white"}
-                      mb={"10px"}
-                      size={"sm"}
-                      textAlign="left">
-                      Token Search Results
-                    </Heading>
-          {data.map((e) => (
-                <Grid
-                  gap="5px"
-                  templateColumns={{
-                    base: "repeat(1,1fr)",
-                    xl: "repeat(4,1fr)",
-                    lg: "repeat(2,1fr)",
-                    md: "repeat(2,1fr)",
-                    sm: "repeat(1,1fr)",
-                  }}
-                  margin="auto">
-                  <Box
-                    mb="10px"
-                    padding="5px"
-                    border="1px solid"
-                    borderRadius="10px"
-                    fontSize={"10px"}
-                    width="100%"
-                    bg={"purple"}>
-                    <Heading
-                      color={"white"}
-                      mb={"10px"}
-                      size={"sm"}
-                      textAlign="left">
-                      Basic Info
-                    </Heading>
+            <Heading color={"white"} mb={"10px"} size={"sm"} textAlign="left">
+              Token Search Results
+            </Heading>
+            {data.map((e) => (
+              <Grid
+                gap="10px"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  xl: "repeat(4,1fr)",
+                  lg: "repeat(2,1fr)",
+                  md: "repeat(2,1fr)",
+                  sm: "repeat(1,1fr)",
+                }}
+                margin="auto">
+                <Box
+                  mb="10px"
+                  padding="5px"
+                  border="1px solid"
+                  borderRadius="10px"
+                  fontSize={"10px"}
+                  bg={"purple"}>
+                  <Heading
+                    color={"white"}
+                    mb={"10px"}
+                    size={"sm"}
+                    textAlign="left">
+                    Basic Info
+                  </Heading>
+                  <Box height="60px">
                     <Flex color={"white"}>
                       <Text width="30%">Pair created at</Text>
                       <Text width="60%">{e.baseToken.name.split(" ")[0]}</Text>
@@ -112,26 +106,30 @@ export default function Token() {
                       <Text width="30%">Pair Address</Text>
                       <Text width="60%">{e.pairAddress}</Text>
                     </Flex>
+                  </Box>
 
-                    <Circle ml="80%" size="50px" bg="tomato" color="white">
+                  <Flex justifyContent={"right"} alignItems="right">
+                    <Circle size="50px" bg="tomato" color="white" mb="10px">
                       <AiOutlineInfoCircle size={"30px"} />
                     </Circle>
-                  </Box>
-                  <Box
-                    mb="10px"
-                    padding="5px"
-                    border="1px solid"
-                    borderRadius="10px"
-                    fontSize={"10px"}
-                    width="100%"
-                    bg={"purple"}>
-                    <Heading
-                      color={"white"}
-                      mb={"10px"}
-                      size={"sm"}
-                      textAlign="left">
-                      Base Token
-                    </Heading>
+                  </Flex>
+                </Box>
+                <Box
+                  mb="10px"
+                  padding="5px"
+                  border="1px solid"
+                  borderRadius="10px"
+                  fontSize={"10px"}
+                  width="100%"
+                  bg={"purple"}>
+                  <Heading
+                    color={"white"}
+                    mb={"10px"}
+                    size={"sm"}
+                    textAlign="left">
+                    Base Token
+                  </Heading>
+                  <Box height="60px">
                     <Flex color={"white"}>
                       <Text width="30%">Name</Text>
                       <Text width="60%">{e.baseToken.name.split(" ")[0]}</Text>
@@ -144,25 +142,28 @@ export default function Token() {
                       <Text width="30%">Address</Text>
                       <Text width="60%">{e.baseToken.address}</Text>
                     </Flex>
-                    <Circle ml="80%" size="50px" bg="tomato" color="white">
+                  </Box>
+                  <Flex justifyContent={"right"} alignItems="right">
+                    <Circle size="50px" bg="tomato" color="white" mb="10px">
                       <MdToken size={"30px"} />
                     </Circle>
-                  </Box>
-                  <Box
-                    mb="10px"
-                    padding="5px"
-                    border="1px solid"
-                    borderRadius="10px"
-                    fontSize={"10px"}
-                    width="100%"
-                    bg={"purple"}>
-                    <Heading
-                      color={"white"}
-                      mb={"10px"}
-                      size={"sm"}
-                      textAlign="left">
-                      Quote Token
-                    </Heading>
+                  </Flex>
+                </Box>
+                <Box
+                  mb="10px"
+                  padding="5px"
+                  border="1px solid"
+                  borderRadius="10px"
+                  fontSize={"10px"}
+                  bg={"purple"}>
+                  <Heading
+                    color={"white"}
+                    mb={"10px"}
+                    size={"sm"}
+                    textAlign="left">
+                    Quote Token
+                  </Heading>
+                  <Box height={"60px"}>
                     <Flex color={"white"}>
                       <Text width="30%">Name</Text>
                       <Text width="60%">{e.quoteToken.name.split(" ")[0]}</Text>
@@ -175,48 +176,50 @@ export default function Token() {
                       <Text width="30%">Address</Text>
                       <Text width="60%">{e.quoteToken.address}</Text>
                     </Flex>
-                    <Circle ml="80%" size="50px" bg="tomato" color="white">
+                  </Box>
+                  <Flex justifyContent={"right"} alignItems="right">
+                    <Circle size="50px" bg="tomato" color="white" mb="10px">
                       <MdToken size={"30px"} />
                     </Circle>
-                  </Box>
-                  <Box
-                    mb="10px"
-                    padding="5px"
-                    border="1px solid"
-                    borderRadius="10px"
-                    fontSize={"10px"}
-                    width="100%"
-                    bg={"purple"}>
-                    <Heading
-                      color={"white"}
-                      mb={"10px"}
-                      size={"sm"}
-                      textAlign="left">
-                      Price
-                    </Heading>
-                    <Box height="60px">
-                      <Flex color={"white"}>
-                        <Text width="30%">Price Native</Text>
-                        <Text width="60%">{e.priceNative}</Text>
-                      </Flex>
-                      <Flex color={"white"}>
-                        <Text width="30%">Price USD</Text>
-                        <Text width="60%">{e.priceUsd}</Text>
-                      </Flex>
-                    </Box>
-
-                    <Flex justifyContent={"right"} alignItems="right">
-                      <Circle size="50px" bg="tomato" color="white" mb="10px">
-                        <MdToken size={"30px"} />
-                      </Circle>
+                  </Flex>
+                </Box>
+                <Box
+                  mb="10px"
+                  padding="5px"
+                  border="1px solid"
+                  borderRadius="10px"
+                  fontSize={"10px"}
+                  bg={"purple"}>
+                  <Heading
+                    color={"white"}
+                    mb={"10px"}
+                    size={"sm"}
+                    textAlign="left">
+                    Price
+                  </Heading>
+                  <Box height="60px">
+                    <Flex color={"white"}>
+                      <Text width="30%">Price Native</Text>
+                      <Text width="60%">{e.priceNative}</Text>
+                    </Flex>
+                    <Flex color={"white"}>
+                      <Text width="30%">Price USD</Text>
+                      <Text width="60%">{e.priceUsd}</Text>
                     </Flex>
                   </Box>
-                  <Divider
-                    visibility={{ md: "hidden", base: "visible" }}
-                    margin={{ base: "15px auto", lg: "0px 0px" }}
-                  />
-                </Grid>
-              ))}
+
+                  <Flex justifyContent={"right"} alignItems="right">
+                    <Circle size="50px" bg="tomato" color="white" mb="10px">
+                      <MdToken size={"30px"} />
+                    </Circle>
+                  </Flex>
+                </Box>
+                <Divider
+                  visibility={{ md: "hidden", base: "visible" }}
+                  margin={{ base: "15px auto", lg: "0px 0px" }}
+                />
+              </Grid>
+            ))}
           </Box>
         </Flex>
       </Flex>
