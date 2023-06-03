@@ -22,6 +22,9 @@ import {
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import logo from "../logo.png";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -49,34 +52,48 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <VStack mt={"20px"}>
-            <Image
-              ml={{ base: "0px", lg: "20px", md: "2px", sm: "0px" }}
-              width={{ base: "60%", lg: "80%", md: "70%", sm: "70%" }}
-              height="60px"
-              src={logo}
-              alt="image"
-            />
+            <Link to={"/"}>
+              <Image
+                ml={{ base: "0px", lg: "20px", md: "2px", sm: "0px" }}
+                width={{ base: "60%", lg: "80%", md: "70%", sm: "70%" }}
+                height="60px"
+                src={logo}
+                alt="image"
+              />
+            </Link>
             <VStack
               as={"nav"}
               display={{ base: "none", md: "flex" }}
-              height="auto"
-              border={"1px solid red"}>
+              height="auto">
               <Flex
                 direction={"column"}
                 justifyContent="space-between"
-                border={"1px solid yellow"}
-                minHeight="100vh"
+                minHeight="260vh"
                 marginTop={"10px"}>
                 <Box fontSize={"20px"} color="white" padding={"10px"}>
-                  <Flex marginTop={"20px"} gap="20px" fontSize={{base:"12px",lg:"18px",sm:"12px"}}>
+                  <Flex
+                    marginTop={"20px"}
+                    gap="20px"
+                    width={"145%"}
+                    height="50px"
+                    alignItems={"center"}
+                    fontSize={{ base: "12px", lg: "18px", sm: "12px" }}
+                    _hover={{ bgColor: "red" }}>
                     <MdToken fontSize="25px" color="white" />
 
-                    <a href="">Token Address</a>
+                    <a href="/token">Token Address</a>
                   </Flex>
-                  <Flex marginTop={"20px"} gap="20px" fontSize={{base:"12px",lg:"18px",sm:"12px"}}>
+                  <Flex
+                    marginTop={"20px"}
+                    gap="20px"
+                    width={"145%"}
+                    height="50px"
+                    alignItems={"center"}
+                    fontSize={{ base: "12px", lg: "18px", sm: "12px" }}
+                    _hover={{ bgColor: "red" }}>
                     <AiOutlineBlock fontSize="25px" color="white" />
 
-                    <a href="">Pair Address</a>
+                    <a href="/pair">Pair Address</a>
                   </Flex>
                 </Box>
                 <Box>
@@ -116,15 +133,21 @@ export default function Simple() {
                 height="200px"
                 marginTop={"10px"}>
                 <Box fontSize={"20px"} color="white">
-                  <Flex marginTop={"20px"} gap="20px">
-                    <MdToken fontSize="30px" color="white" />
+                  <Flex marginTop={"20px"} gap="20px"
+                     alignItems={"center"}
+                     _hover={{ bgColor: "red" }} 
+                     padding="5px"
+                     >
+                    <MdToken fontSize="25px" color="white" />
 
-                    <a href="">Token Address</a>
+                    <a href="/token">Token Address</a>
                   </Flex>
-                  <Flex marginTop={"20px"} gap="20px">
-                    <AiOutlineBlock fontSize="30px" color="white" />
+                  <Flex marginTop={"20px"} gap="20px" alignItems={"center"}
+                     _hover={{ bgColor: "red" }}
+                     padding="5px">
+                    <AiOutlineBlock fontSize="25px" color="white" />
 
-                    <a href="">Pair Address</a>
+                    <a href="/pair">Pair Address</a>
                   </Flex>
                 </Box>
                 <Box>
