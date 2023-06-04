@@ -17,6 +17,7 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import { MdToken } from "react-icons/md";
 import Footer from "./Footer";
 import WithSubnavigation from "./Navbar";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -53,19 +54,25 @@ export default function Home() {
           width="88%"
           marginTop="20px"
           marginLeft={"8px"}>
-          <InputGroup
-            width={{ base: "100%", md: "60%", sm: "100%" }}
-            borderRadius={"25%"}
-            color="white">
-            <Input
-              placeholder="Search"
-              _placeholder={{ color: "white" }}
-              color="white"
-            />
-            <InputRightElement>
-              <SearchIcon color="gray.300" />
-            </InputRightElement>
-          </InputGroup>
+          <Flex
+            gap={"10px"}
+            direction={{ base: "column", md: "row", sm: "column" }}
+            justifyContent="space-around">
+            <InputGroup
+              width={{ base: "100%", md: "60%", sm: "100%" }}
+              borderRadius={"25%"}
+              color="white">
+              <Input
+                placeholder="Search"
+                _placeholder={{ color: "white" }}
+                color="white"
+              />
+              <InputRightElement>
+                <SearchIcon color="gray.300" />
+              </InputRightElement>
+            </InputGroup>
+            <ConnectButton />
+          </Flex>
 
           <Box padding={"15px"} width="100%">
             <Heading color={"white"} mb={"10px"} size={"sm"}>
