@@ -148,7 +148,7 @@ export default function Pair() {
                   border="1px solid"
                   borderRadius="10px"
                   fontSize={{
-                    base: "12px",
+                    base: "10px",
                     xl: "10px",
                     lg: "10px",
                     md: "10px",
@@ -190,7 +190,7 @@ export default function Pair() {
                   border="1px solid"
                   borderRadius="10px"
                   fontSize={{
-                    base: "12px",
+                    base: "10px",
                     xl: "10px",
                     lg: "10px",
                     md: "10px",
@@ -232,7 +232,7 @@ export default function Pair() {
                   border="1px solid"
                   borderRadius="10px"
                   fontSize={{
-                    base: "12px",
+                    base: "10px",
                     xl: "10px",
                     lg: "10px",
                     md: "10px",

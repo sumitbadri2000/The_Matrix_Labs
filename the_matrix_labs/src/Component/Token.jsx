@@ -147,7 +147,13 @@ export default function Token() {
                   padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
+                  fontSize={{
+                    base: "10px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
                   bg={"#390554"}
                   height="180px">
                   <Heading
@@ -183,7 +189,13 @@ export default function Token() {
                   padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
+                  fontSize={{
+                    base: "10px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
                   bg={"#390554"}
                   height="180px">
                   <Heading
@@ -219,7 +231,13 @@ export default function Token() {
                   padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
+                  fontSize={{
+                    base: "10px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
                   bg={"#390554"}
                   height="180px">
                   <Heading
