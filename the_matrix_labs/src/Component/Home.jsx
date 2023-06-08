@@ -14,6 +14,7 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { TbCurrencyDollar } from "react-icons/tb";
 import { MdToken } from "react-icons/md";
 import Footer from "./Footer";
 import WithSubnavigation from "./Navbar";
@@ -47,22 +48,28 @@ export default function Home() {
     <>
       <Flex
         direction={{ base: "column", md: "row", sm: "column" }}
-        backgroundColor="brown">
+        backgroundColor="rgb(80,80,80)">
         <WithSubnavigation w="10%" />
         <Flex
           direction="column"
           width="88%"
           marginTop="20px"
-          marginLeft={"8px"}>
+          marginLeft={"20px"}>
           <Flex
-            gap={"10px"}
+            gap={{ base: "10px", xl: "160px", md: "20px", sm: "10px" }}
             direction={{ base: "column", md: "row", sm: "column" }}
             justifyContent="space-around">
             <InputGroup
-              width={{ base: "100%", md: "60%", sm: "100%" }}
-              borderRadius={"25%"}
+              width={{
+                base: "100%",
+                xl: "50%",
+                lg: "60%",
+                md: "40%",
+                sm: "100%",
+              }}
               color="white">
               <Input
+                borderRadius={"15px"}
                 placeholder="Search"
                 _placeholder={{ color: "white" }}
                 color="white"
@@ -71,11 +78,23 @@ export default function Home() {
                 <SearchIcon color="gray.300" />
               </InputRightElement>
             </InputGroup>
-            <ConnectButton />
+            <Box
+              display={{
+                base: "none",
+                xl: "block",
+                lg: "block",
+                md: "block",
+                sm: "none",
+              }}>
+              <ConnectButton />
+            </Box>
           </Flex>
 
-          <Box padding={"15px"} width="100%">
-            <Heading color={"white"} mb={"10px"} size={"sm"}>
+          <Box
+            padding={"20px"}
+            width="100%"
+            mt={{ base: "0px", md: "20px", sm: "0px" }}>
+            <Heading color={"white"} mb={"10px"} size={"md"}>
               Pair Address
             </Heading>
             {pair.map((e) => (
@@ -90,141 +109,171 @@ export default function Home() {
                 }}
                 margin="auto">
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "10px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Basic Info
                   </Heading>
-                  <Box height="60px">
-                    <Flex color={"white"}>
-                      <Text width="30%">Pair created at</Text>
-                      <Text width="60%">{e.baseToken.name.split(" ")[0]}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Pair created at</Text>
+                      <Text width="54%">#7890</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Symbol</Text>
-                      <Text width="60%">{e.baseToken.symbol}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Symbol</Text>
+                      <Text width="54%">{e.baseToken.symbol}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">DEX Id</Text>
-                      <Text width="60%">{e.dexId}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">DEX Id</Text>
+                      <Text width="54%">{e.baseToken.name.split(" ")[0]}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Pair Address</Text>
-                      <Text width="60%">{e.pairAddress}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Pair Address</Text>
+                      <Text width="54%">#6754</Text>
                     </Flex>
                   </Box>
-
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <AiOutlineInfoCircle size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white">
+                      <AiOutlineInfoCircle size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  width="100%"
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "12px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Base Token
                   </Heading>
-                  <Box height="60px">
-                    <Flex color={"white"}>
-                      <Text width="30%">Name</Text>
-                      <Text width="60%">{e.baseToken.name.split(" ")[0]}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Name</Text>
+                      <Text width="54%">{e.baseToken.name.split(" ")[0]}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Symbol</Text>
-                      <Text width="60%">{e.baseToken.symbol}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Symbol</Text>
+                      <Text width="54%">{e.baseToken.symbol}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Address</Text>
-                      <Text width="60%">{e.baseToken.address}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Address</Text>
+                      <Text width="54%">#7890</Text>
                     </Flex>
                   </Box>
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <MdToken size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white" mb="10px">
+                      <MdToken size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "12px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Quote Token
                   </Heading>
-                  <Box height={"60px"}>
-                    <Flex color={"white"}>
-                      <Text width="30%">Name</Text>
-                      <Text width="60%">{e.quoteToken.name.split(" ")[0]}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Name</Text>
+                      <Text width="54%">{e.quoteToken.name.split(" ")[0]}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Symbol</Text>
-                      <Text width="60%">{e.quoteToken.symbol}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Symbol</Text>
+                      <Text width="54%">{e.quoteToken.symbol}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Address</Text>
-                      <Text width="60%">{e.quoteToken.address}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Address</Text>
+                      <Text width="54%">#7890</Text>
                     </Flex>
                   </Box>
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <MdToken size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white" mb="10px">
+                      <MdToken size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "12px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Price
                   </Heading>
-                  <Box height="60px">
-                    <Flex color={"white"}>
-                      <Text width="30%">Price Native</Text>
-                      <Text width="60%">{e.priceNative}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Price Native</Text>
+                      <Text width="54%">{e.priceNative}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Price USD</Text>
-                      <Text width="60%">{e.priceUsd}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Price USD</Text>
+                      <Text width="58%">{e.priceUsd}</Text>
                     </Flex>
                   </Box>
 
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <MdToken size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white">
+                      <TbCurrencyDollar size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
@@ -235,8 +284,8 @@ export default function Home() {
               </Grid>
             ))}
           </Box>
-          <Box padding={"15px"} width="100%">
-            <Heading color={"white"} mb={"10px"} size={"sm"}>
+          <Box padding={"20px"} width="100%">
+            <Heading color={"white"} mb={"10px"} size={"md"}>
               Token Address
             </Heading>
             {data.map((e) => (
@@ -251,141 +300,171 @@ export default function Home() {
                 }}
                 margin="auto">
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "10px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Basic Info
                   </Heading>
-                  <Box height="60px">
-                    <Flex color={"white"}>
-                      <Text width="30%">Pair created at</Text>
-                      <Text width="60%">{e.baseToken.name.split(" ")[0]}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Pair created at</Text>
+                      <Text width="54%">{e.baseToken.name.split(" ")[0]}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Symbol</Text>
-                      <Text width="60%">{e.baseToken.symbol}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Symbol</Text>
+                      <Text width="54%">{e.baseToken.symbol}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">DEX Id</Text>
-                      <Text width="60%">{e.dexId}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">DEX Id</Text>
+                      <Text width="54%">#7890</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Pair Address</Text>
-                      <Text width="60%">{e.pairAddress}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Pair Address</Text>
+                      <Text width="54%">#6754</Text>
                     </Flex>
                   </Box>
-
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <AiOutlineInfoCircle size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white">
+                      <AiOutlineInfoCircle size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  width="100%"
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "12px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Base Token
                   </Heading>
-                  <Box height="60px">
-                    <Flex color={"white"}>
-                      <Text width="30%">Name</Text>
-                      <Text width="60%">{e.baseToken.name.split(" ")[0]}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Name</Text>
+                      <Text width="54%">{e.baseToken.name.split(" ")[0]}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Symbol</Text>
-                      <Text width="60%">{e.baseToken.symbol}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Symbol</Text>
+                      <Text width="54%">{e.baseToken.symbol}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Address</Text>
-                      <Text width="60%">{e.baseToken.address}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Address</Text>
+                      <Text width="54%">#7890</Text>
                     </Flex>
                   </Box>
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <MdToken size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white" mb="10px">
+                      <MdToken size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "12px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Quote Token
                   </Heading>
-                  <Box height={"60px"}>
-                    <Flex color={"white"}>
-                      <Text width="30%">Name</Text>
-                      <Text width="60%">{e.quoteToken.name.split(" ")[0]}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Name</Text>
+                      <Text width="54%">{e.quoteToken.name.split(" ")[0]}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Symbol</Text>
-                      <Text width="60%">{e.quoteToken.symbol}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Symbol</Text>
+                      <Text width="54%">{e.quoteToken.symbol}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Address</Text>
-                      <Text width="60%">{e.quoteToken.address}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Address</Text>
+                      <Text width="54%">#7890</Text>
                     </Flex>
                   </Box>
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <MdToken size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white" mb="10px">
+                      <MdToken size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
                 <Box
-                  mb="10px"
-                  padding="5px"
+                  mb="20px"
+                  padding="20px"
                   border="1px solid"
                   borderRadius="10px"
-                  fontSize={"10px"}
-                  bg={"purple"}>
+                  fontSize={{
+                    base: "12px",
+                    xl: "10px",
+                    lg: "10px",
+                    md: "10px",
+                    sm: "16px",
+                  }}
+                  bg={"#390554"}
+                  height="180px">
                   <Heading
                     color={"white"}
                     mb={"10px"}
+                    ml="5px"
                     size={"sm"}
                     textAlign="left">
                     Price
                   </Heading>
-                  <Box height="60px">
-                    <Flex color={"white"}>
-                      <Text width="30%">Price Native</Text>
-                      <Text width="60%">{e.priceNative}</Text>
+                  <Box height="70px" ml={"5px"}>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Price Native</Text>
+                      <Text width="54%">{e.priceNative}</Text>
                     </Flex>
-                    <Flex color={"white"}>
-                      <Text width="30%">Price USD</Text>
-                      <Text width="60%">{e.priceUsd}</Text>
+                    <Flex color={"white"} gap="40px" mb="5px">
+                      <Text width="40%">Price USD</Text>
+                      <Text width="58%">{e.priceUsd}</Text>
                     </Flex>
                   </Box>
 
                   <Flex justifyContent={"right"} alignItems="right">
-                    <Circle size="50px" bg="tomato" color="white" mb="10px">
-                      <MdToken size={"30px"} />
+                    <Circle size="50px" bg="#960252" color="white">
+                      <TbCurrencyDollar size={"25px"} />
                     </Circle>
                   </Flex>
                 </Box>
